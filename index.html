@@ -6,6 +6,12 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=660px">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="爆裂！イラッとギャグスタンプ">
+<meta property="og:url" content="http://wines.github.io/">
+<meta property="og:image" content="http://wines.github.io/img/main.jpg">
+<meta property="og:title" content="爆裂！イラッとギャグスタンプ公式HP|わいんずオリジナルスタンプ|#LINE">
+<meta property="og:description" content="ウザくてイラっとするオヤジや可愛くない犬など、バラエティ豊かなおもしろおかしいギャグスタンプが盛り沢山！あいさつから挑発まで完全網羅の決定版！">
 <link rel="stylesheet" href="./common/css/style.css" media="screen,print">
 </head>
 <body>
@@ -42,6 +48,11 @@
   <li id="num18"><img src="./img/18.png" alt=""></li>
   <li id="num19"><img src="./img/19.png" alt=""></li>
   <li id="num20"><img src="./img/20.png" alt=""></li>
+</ul>
+
+<a class="btn" href="http://line.me/S/sticker/1052001">今すぐGET!!</a>
+
+<ul class="col2">
   <li id="num21"><img src="./img/21.png" alt=""></li>
   <li id="num22"><img src="./img/22.png" alt=""></li>
   <li id="num23"><img src="./img/23.png" alt=""></li>
@@ -75,7 +86,7 @@
 <p>正直存在すら忘れかけていたところではありますが、わたくし共の黒い念の粋を集めて作ったこのスタンプを皆さんにお披露目できること、本当に嬉しく思います。<br>2.5年生の不良も、頭が年中春のオジーチャンオバーチャンも、幅広く使って頂けるスタンプとなっております。<br>
 是非是非、好きな異性や嫌いな友達とのトークでお使いくださいませ。</p>
 <p>糞の役には立つかと存じます。</p>
-<p>2015年3月吉日<br>わいんず一同</p>
+<p class="ar">2015年3月吉日<br>わいんず一同</p>
 </section>
 
 <hr>
@@ -96,6 +107,34 @@
 
 <a class="btn" href="http://line.me/S/sticker/1052001">LINE STOREへ</a>
 
+<p class="ac">気に入った場合は、是非シェアしてください。</p>
+
+<div class="social-area-syncer">
+  <ul class="social-button-syncer">
+    <!-- Twitter -->
+    <li class="sc-tw"><a data-url="http://wines.github.io/" href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-count="vertical" data-dnt="true">ツイート</a></li>
+
+    <!-- Facebook -->
+    <li class="sc-fb"><div class="fb-like" data-href="http://wines.github.io/" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div></li>
+
+    <!-- Google+ -->
+    <li><div data-href="http://wines.github.io/" class="g-plusone" data-size="tall"></div></li>
+
+    <!-- はてなブックマーク -->
+    <li><a href="http://b.hatena.ne.jp/entry/http://wines.github.io/" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border:none;" /></a></li>
+
+    <!-- pocket -->
+    <li><a data-save-url="http://wines.github.io/" data-pocket-label="pocket" data-pocket-count="vertical" class="pocket-btn" data-lang="en"></a></li>
+
+    <!-- LINE [画像は公式ウェブサイトからダウンロードして下さい] -->
+    <li class="sc-li"><a href="http://line.me/R/msg/text/?http://wines.github.io/"><img src="https://media.line.me/img/button/ja/36x60.png" width="36" height="60" alt="LINEに送る" class="sc-li-img"></a></li>
+  </ul>
+
+<!-- Facebook用 -->
+<div id="fb-root"></div>
+
+</div>
+
 <p class="copy">&copy;2015 wines All Rights Reserved.</p>
 
 </main>
@@ -112,6 +151,52 @@ $('#num1, #num2, #num3, #num4, #num5, #num6, #num7, #num8, #num9, #num10, #num11
   $this.trigger('startRumble');
   demoTimeout = setTimeout(function(){$this.trigger('stopRumble');}, 1500);
 });
+
+/* DOMの読み込み完了後に処理 */
+if(window.addEventListener) {
+  window.addEventListener( "load" , shareButtonReadSyncer, false );
+}else{
+  window.attachEvent( "onload", shareButtonReadSyncer );
+}
+
+/* シェアボタンを読み込む関数 */
+function shareButtonReadSyncer(){
+
+//遅延ロードする場合は次の行と、終わりの方にある行のコメント(//)を外す
+//setTimeout(function(){
+
+//Twitter
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+
+//Facebook
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+//Google+
+var scriptTag = document.createElement("script");
+scriptTag.type = "text/javascript"
+scriptTag.src = "https://apis.google.com/js/platform.js";
+scriptTag.async = true;
+document.getElementsByTagName("head")[0].appendChild(scriptTag);
+
+//はてなブックマーク
+var scriptTag = document.createElement("script");
+scriptTag.type = "text/javascript"
+scriptTag.src = "https://b.st-hatena.com/js/bookmark_button.js";
+scriptTag.async = true;
+document.getElementsByTagName("head")[0].appendChild(scriptTag);
+
+//pocket
+(!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js"));
+
+//},5000);  //ページを開いて5秒後(5,000ミリ秒後)にシェアボタンを読み込む
+
+}
 </script>
 
 </body>
