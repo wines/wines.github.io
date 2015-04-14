@@ -1,0 +1,36 @@
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+
+body{
+  text-align: center;
+  background:#fff;
+}
+
+section {
+  position: relative;
+  width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+    section{
+      width : 100%;
+    }
+}
+
+h1{
+    position: absolute;
+    top:50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: -2em;
+    color: #000;
+    font-family: 'Special Elite', cursive;
+}
+
+#obs-ca{
+  width: 100%;
+  height: 100%;
+  background:#fff;
+}
