@@ -44,7 +44,7 @@ $(function () {
         points.push(p0);
         count++;
 
-        if(count > 1000){
+        if(count > 800){
           clearInterval(testTimer);
         }
 

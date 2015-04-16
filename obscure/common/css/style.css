@@ -18,15 +18,29 @@ section {
     }
 }
 
+section {
+  position: relative;
+}
+
 h1{
     position: absolute;
-    top:50%;
-    left: 0;
+    color: #000;
+    left:0;
+    top:0;
     right: 0;
     bottom: 0;
-    margin-top: -2em;
-    color: #000;
+    top: 100px;
+    text-align: center;
     font-family: 'Special Elite', cursive;
+     text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+}
+
+.svg {
+  position: absolute;
+  left:0;
+  top: 200px;
+  right: 0;
+  bottom: 0;
 }
 
 #obs-ca{
