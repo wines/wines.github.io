@@ -67,6 +67,14 @@ document.getElementsByTagName("head")[0].appendChild(scriptTag);
 }
 
 /*-------------------------------------------
+Parallax
+-------------------------------------------*/
+$('#page-wrap').mousemove(function(e) {
+    var x = (e.pageX * -1 / 5), y = (e.pageY * -1 / 5);
+    $(this).css('background-position', x + 'px ' + y + 'px');
+});
+
+/*-------------------------------------------
 GA
 -------------------------------------------*/
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
