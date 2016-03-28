@@ -485,6 +485,7 @@ h1 span.date{
 
 .main-visual {
   margin-bottom: 40px;
+  text-align: center;
 }
 
 hr {
@@ -544,6 +545,7 @@ h2 {
 
 .img {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .img img {
@@ -555,7 +557,7 @@ table {
   font-size: 20px;
   margin-bottom: 40px;
   background-color: #fff;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 table th, td {

@@ -98,17 +98,15 @@ window.addEventListener("resize", function() {
         points.push(p0);
         count++;
 
-        if(getScreenWidth() > 640){
           if(count > 500){
             clearInterval(testTimer);
           }
-        }else{
-          if(count > 250){
-            clearInterval(testTimer);
-          }          
-        }
 
     }, 1500/24);
   }
-  startTimer();
+  if(getScreenWidth() > 1024){
+    startTimer();
+  }
+
+
 });
