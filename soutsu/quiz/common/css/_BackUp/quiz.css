@@ -370,12 +370,16 @@ img {
 	margin-bottom: 40px;
 }
 
-#tweet a {
+#tweet {
 	text-decoration: none;
 	background-color: #6CADDE;
 	padding: 10px 20px;
 	display: inline-block;
 	border-radius: 4px;
+	color: #fff;
+}
+
+#tweet a {
 	color: #fff;
 }
 

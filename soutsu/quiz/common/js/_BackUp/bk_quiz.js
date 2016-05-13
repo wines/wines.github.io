@@ -136,7 +136,7 @@ var quizeFunc = function(){
     var $jd = $("#judge-04");
     if(ans == '一寸先は鬱' ){
       $jd.find('p').remove();
-      $jd.append('<p><span class="get">せぃかぃ！</span>描き下ろし漫画「???」をGET！<span class="anim">'+img4+'</span></p>');
+      $jd.append('<p><span class="get">せぃかぃ！</span>描き下ろし漫画「躁鬱の目覚め」をGET！<span class="anim">'+img4+'</span></p>');
       $(this).remove();
       count++;
       $NUM.text(count);
@@ -163,44 +163,55 @@ var quizeFunc = function(){
   });
 };quizeFunc();
 
+
+var $tweetBtn = $('#shareTweet');
 //complete
 $('<img src="../quiz/img/img_manga_06.jpg" alt="" >');
 $('<img src="../quiz/img/comp.png" alt="" >');
 var img6 = '<img src="../quiz/img/img_manga_06.jpg" alt="" >';
 var imgcomp = '<img src="../quiz/img/comp.png" alt="" >';
+
+//set tweet btn
+var $tweetBtn = $('#tweet');
+$tweetBtn.append('<a href="http://twitter.com/intent/tweet?original_referer=http://wines.github.io/soutsu/quiz/index.html&amp;url=http://wines.github.io/soutsu/quiz/index.html&amp;text=%e2%96%a0%e6%ad%a3%e8%a7%a3%e6%95%b0%ef%bc%9a0%e3%80%80%e2%96%a0%e8%ba%81%e9%ac%b1%e3%83%ac%e3%83%99%e3%83%ab%ef%bc%9a%e3%80%8c%e3%82%8e%e3%81%9f%e3%81%bf%e3%81%a7%e3%81%8d%e3%81%9f%e3%81%87%e3%81%a6%e3%81%93%e3%81%83%e3%80%8d%e3%80%80%20%e8%ba%81%e9%ac%b1%e3%81%8f%e3%82%93%e3%81%ae%e3%82%af%e3%82%a4%e3%82%ba%e3%81%ab%e7%ad%94%e3%81%88%e3%81%a6%e6%8f%8f%e3%81%8d%e4%b8%8b%e3%82%8d%e3%81%97%e6%bc%ab%e7%94%bb%e3%82%92%e4%bb%8a%e3%81%99%e3%81%90GET%ef%bc%81%20%20%23%e8%ba%81%e9%ac%b1%e3%81%8f%e3%82%93%e3%81%ae%e3%82%af%e3%82%a4%e3%82%ba%e3%80%80%23%e8%ba%81%e9%ac%b1%e6%bc%ab%e7%94%bb%e9%9b%86"> 結果をツイート</a>');
+
 var tweetFunc = function(NUM){
     var count = NUM;
     var $url = $("meta[property='og:url']").attr("content");
     var str1 = '%e2%96%a0%e6%ad%a3%e8%a7%a3%e6%95%b0%ef%bc%9a'//■正解数：
     var str2 = '%e3%80%80%e2%96%a0%e8%ba%81%e9%ac%b1%e3%83%ac%e3%83%99%e3%83%ab%ef%bc%9a%e3%80%8c'//　■躁鬱レベル：「
     var str3 = '%e3%80%8d%e3%80%80%20%e8%ba%81%e9%ac%b1%e3%81%8f%e3%82%93%e3%81%ae%e3%82%af%e3%82%a4%e3%82%ba%e3%81%ab%e7%ad%94%e3%81%88%e3%81%a6%e6%8f%8f%e3%81%8d%e4%b8%8b%e3%82%8d%e3%81%97%e6%bc%ab%e7%94%bb%e3%82%92%e4%bb%8a%e3%81%99%e3%81%90GET%ef%bc%81%20%20%23%e8%ba%81%e9%ac%b1%e3%81%8f%e3%82%93%e3%81%ae%e3%82%af%e3%82%a4%e3%82%ba%e3%80%80%23%e8%ba%81%e9%ac%b1%e6%bc%ab%e7%94%bb%e9%9b%86' //」　 躁鬱くんのクイズに答えて描き下ろし漫画を今すぐGET！  #躁鬱くんのクイズ　#躁鬱漫画集
-    var $tweetBtn = $('#shareTweet');
     var level;
 
     switch (count) {
       case 1:
         level = '%e3%82%8e%e3%81%9f%e3%81%bf%e3%81%ae%e3%81%a3%e3%83%83%e3%81%b1%e3%82%8a%e3%81%ab%e3%82%82%e3%81%aa%e3%83%b3%e3%81%aa%e3%81%83';
-        $tweetBtn.attr('href','http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text='+str1+count+str2+level+str3+'');
+        $tweetBtn.find('a').remove();
+        $tweetBtn.append('<a href="http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text='+str1+count+str2+level+str3+'"> 結果をツイート</a>');
         break;
       
       case 2:
         level = '%e3%82%82%e3%83%83%e3%81%a8%e3%82%8e%e3%81%9f%e3%81%bf%e3%81%ab%e3%81%aa%e3%82%8c';
-        $tweetBtn.attr('href','http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text='+str1+count+str2+level+str3+'');
+        $tweetBtn.find('a').remove();
+        $tweetBtn.append('<a href="http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text='+str1+count+str2+level+str3+'"> 結果をツイート</a>');
         break;
       
       case 3:
         level = '%e3%81%a1%e3%82%85%e2%80%be%e3%81%a8%e3%81%af%e3%83%b3%e3%81%b1%e3%81%ae%e3%82%8e%e3%81%9f%e3%81%bf';
-        $tweetBtn.attr('href','http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text='+str1+count+str2+level+str3+'');
+        $tweetBtn.find('a').remove();
+        $tweetBtn.append('<a href="http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text='+str1+count+str2+level+str3+'"> 結果をツイート</a>');
         break;
       
       case 4:
         level = '%e3%82%82%e2%80%be%e3%81%99%e3%81%90%e3%81%a7%e3%82%8e%e3%81%9f%e3%81%bf';
-        $tweetBtn.attr('href','http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text='+str1+count+str2+level+str3+'');
+        $tweetBtn.find('a').remove();
+        $tweetBtn.append('<a href="http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text='+str1+count+str2+level+str3+'"> 結果をツイート</a>');
         break;
         
       case 5:
         level = '%e3%81%99%e3%81%94%e2%80%be%e3%81%83%20%e3%82%8e%e3%81%9f%e3%81%bf%e3%81%bf%e3%81%9f%e3%81%83';
-        $tweetBtn.attr('href','http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text='+str1+count+str2+level+str3+'');
+        $tweetBtn.find('a').remove();
+        $tweetBtn.append('<a href="http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text='+str1+count+str2+level+str3+'"> 結果をツイート</a>');
         var $comp = $('#comp');
         $('<p>ぜンもンせぃかぃ、ぉめでとぅ</p><div>'+imgcomp+'</div><p>描き下ろし漫画「全クリ」をGET！</p><div>'+img6+'</div>').appendTo($comp);        
         break;
