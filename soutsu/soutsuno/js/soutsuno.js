@@ -307,7 +307,7 @@ function animateCaptureState() {
             //Captured
             var captureStatus = document.getElementById('capture-status');
             captureStatus.classList.toggle('hidden');
-            captureStatus.innerHTML = "躁鬱くんをGETした！！<br>が君は働く必要がありそうだ。<br><a href='https://townwork.net/' target='_blank'>タウンワークはこちら</a>";
+            captureStatus.innerHTML = "躁鬱くんをGETした！！<br>が君は働く必要がありそうだ。<br><a href='https://www.hellowork.go.jp/' target='_blank'>ハローワークはこちら</a>";
             makeItRainConfetti();
 
             anime({
