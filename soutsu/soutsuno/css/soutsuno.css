@@ -479,7 +479,6 @@ a {
   top: 8px;
   right: 8px;
   z-index: 15;
-  color: button;
   width: 30px;
   height: 30px;
   color: #FFF;
@@ -565,5 +564,5 @@ a {
 }
 
 .line {
-  color: #00C402;
+  color: #50C900;
 }

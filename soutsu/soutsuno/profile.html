@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>躁鬱NO</title>
+<title>躁鬱NO | 躁鬱くんプロフィール</title>
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
@@ -13,28 +13,91 @@
 <meta property="og:image" content="http://wines.github.io/soutsu/soutsuno/img/og.jpg">
 <meta property="og:title" content="わいんず">
 <meta property="og:description" content="君は伝説のニートモンスター躁鬱くんを捕まえれるかッ!!!">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 <link href="css/soutsuno.css" rel="stylesheet">
-</head>
+
+<style>
+
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  main {
+    margin-bottom: 40px;
+  }
+
+  .select-link-01,
+  .select-link-02 {
+    display: block;
+    z-index: 2;
+    position: absolute;
+  }
+
+  .select-link-01 {
+    top: 58.671875%;
+    left: 28.05555%;
+    width: 43.05555%;
+  }
+
+  .select-link-02 {
+    top: 88.59375%;
+    left: 9.02777%;
+    width: 81.94444%;
+  }
+
+  .tweet a{
+    background-color: #1B95E0;
+    color: #fff;
+    width: 50%;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 0 auto 60px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+  }
+
+</style>
 
 <script>
-if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
-}else{
-    alert("このページは、すま～とふぉンでアクセスして楽しむとょぃぞ....。変わりにクイズを出そう...。");
-    location.href = "/soutsu/quiz/index.html?s-no";
+var str =  document.referrer;
+var re = "soutsuno";
+if(!str.match(re)){
+  location.href = "/soutsu/soutsuno/index.html?re";
 }
 
+function toggleInfoScreen() {
+    var infoScreen = document.getElementById('info-screen');
+    var infoButton = document.getElementById('info-button');
+    infoScreen.classList.toggle('hidden');
+    infoButton.innerHTML = (infoScreen.className === 'hidden') ? "<i class='fa fa-bars' aria-hidden='true'></i>" : 'X';
+}
 </script>
+
+</head>
 <body>
 
 <header>
 <h1><i class="fa fa-hand-paper-o"></i> 躁鬱NO <i class="fa fa-hand-paper-o"></i></h1>
 </header>
 
-<section id="wrapper">
-<div id="title">
-<h1>躁鬱くんを発見した！</h1> 
-</div>
+<main>
+<h1><img src="img/img_profile.png" alt="躁鬱くん">
+<a href="https://www.hellowork.go.jp/" target="_blank" class="select-link-01"><img src="img/btn_01.png" alt="さらなる冒険の世界へ！"></a>
+<a href="http://www.keishicho.metro.tokyo.jp/" target="_blank" class="select-link-02"><img src="img/btn_02.png" alt="そううつセンターへ！"></a>
+</h1>
+
 
 <div id="info-button" onclick="toggleInfoScreen()"><i class="fa fa-bars" aria-hidden="true"></i></div>
 <div id="info-screen" class="hidden">
@@ -55,45 +118,15 @@ if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iP
 </div>
 </div>
 
-<div id="touch-layer"></div>
-<div id="particles"></div>
-<div id="ring-screen">
-<div id="ring">
-<div id="ring-active">
-<div id="ring-fill"></div>
-</div>
-</div>
-</div>
-<div id="screen" class="gradient-background">
-<div id="target-container">
-<div id="target"></div>
-</div>
-<div id="ball"></div>
-<div id="output"></div>
-</div>
+<div class="tweet"><a href="https://twitter.com/share?url=http://wines.github.io/soutsu/soutsuno/&amp;text=%e3%81%89%e3%81%8f%e3%81%95%e3%83%b3%e2%80%a6%e3%81%bc%e3%81%8f%e3%81%af%e2%80%a6%e3%81%81%e3%81%aa%e3%81%9f%e3%81%ab%e3%81%92%e3%83%83%e3%81%a8%e3%81%95%e3%82%8c%e3%81%a6%e2%80%a6%e3%81%bc%e3%83%83%e3%81%8d%e3%82%82%e3%83%b3%e3%81%a7%e3%81%99%e2%80%a6%e4%bc%9d%e8%aa%ac%e3%81%ae%e3%83%8b%e3%83%bc%e3%83%88%e3%80%81%e8%ba%81%e9%ac%b1%e3%81%8f%e3%82%93%e3%82%92%e3%82%b2%e3%83%83%e3%83%88%e3%81%97%e3%82%8d%ef%bc%81%20%23%e3%83%9d%e3%82%b1%e3%83%a2%e3%83%b3GO%20%23%e8%ba%81%e9%ac%b1NO%20%23%e8%ba%81%e9%ac%b1%e6%bc%ab%e7%94%bb%e9%9b%86"><i class="fa fa-twitter" aria-hidden="true"></i>
+ ツイート</a></div>
 
-<div id="capture-screen" class="hidden">
-<div id="capture-status" class="hidden">
-躁鬱くんをGETした！
-</div>
-<div id="poof-container" class="hidden">
-<div id="poof"></div>
-</div>
-<div id="capture-confetti"></div>
-<div id="capture-ball"></div>
-<div id="capture-ball-button-container" class="hidden">
-<div id="capture-ball-button"></div>
-</div>
-</div>
-</section>
+ </main>
 
 <footer>
 <p class="copy">&copy; わいんず 躁鬱NO Ver1.0</p>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js"></script>
-<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/zingtouch.min.js"></script>
-<script src="js/soutsuno.js"></script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

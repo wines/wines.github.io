@@ -307,7 +307,10 @@ function animateCaptureState() {
             //Captured
             var captureStatus = document.getElementById('capture-status');
             captureStatus.classList.toggle('hidden');
-            captureStatus.innerHTML = "躁鬱くんをGETした！！<br>が君は働く必要がありそうだ。<br><a href='https://www.hellowork.go.jp/' target='_blank'>ハローワークはこちら</a>";
+            captureStatus.innerHTML = "躁鬱くんをGETした！！";
+            setTimeout(function() {
+               location.href = "/soutsu/soutsuno/profile.html";
+            }, 1000);
             makeItRainConfetti();
 
             anime({
@@ -319,12 +322,7 @@ function animateCaptureState() {
                 },
                 complete: function() {
                     setTimeout(function() {
-                        var ballContainer = document.getElementById('capture-screen');
-                        //ballContainer.classList.toggle('hidden');
-                        var buttonContainer = document.getElementById('capture-ball-button-container');
-                        //buttonContainer.classList.toggle('hidden');
-                        //buttonContainer.style.opacity = "";
-                        //document.getElementById('capture-status').classList.toggle('hidden');
+                       
                     }, 800);
                 }
             });
