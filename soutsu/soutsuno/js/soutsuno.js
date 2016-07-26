@@ -346,16 +346,16 @@ function animateCaptureState() {
                 complete: function() {
                     
                     var ballContainer = document.getElementById('capture-screen');
-                    //ballContainer.classList.toggle('hidden');
+                    ballContainer.classList.toggle('hidden');
 
                     var poofEle = document.getElementById('poof');
-                    //poofEle.style.transform = "";
+                    poofEle.style.transform = "";
                     
                     var poofContainer = document.getElementById('poof-container');
-                    //poofContainer.classList.toggle('hidden');
+                    poofContainer.classList.toggle('hidden');
 
                     var captureStatus = document.getElementById('capture-status');
-                    //captureStatus.classList.toggle('hidden');
+                    captureStatus.classList.toggle('hidden');
                     
                 }
             });
