@@ -347,16 +347,12 @@ function animateCaptureState() {
                     
                     var ballContainer = document.getElementById('capture-screen');
                     ballContainer.classList.toggle('hidden');
-
                     var poofEle = document.getElementById('poof');
                     poofEle.style.transform = "";
-                    
                     var poofContainer = document.getElementById('poof-container');
                     poofContainer.classList.toggle('hidden');
-
                     var captureStatus = document.getElementById('capture-status');
                     captureStatus.classList.toggle('hidden');
-                    
                 }
             });
         }
