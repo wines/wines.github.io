@@ -344,15 +344,16 @@ function animateCaptureState() {
                     duration: 600
                 },
                 complete: function() {
-                    
-                    var ballContainer = document.getElementById('capture-screen');
-                    ballContainer.classList.toggle('hidden');
-                    var poofEle = document.getElementById('poof');
-                    poofEle.style.transform = "";
-                    var poofContainer = document.getElementById('poof-container');
-                    poofContainer.classList.toggle('hidden');
-                    var captureStatus = document.getElementById('capture-status');
-                    captureStatus.classList.toggle('hidden');
+                   setTimeout(function() { 
+                        var ballContainer = document.getElementById('capture-screen');
+                        ballContainer.classList.toggle('hidden');
+                        var poofEle = document.getElementById('poof');
+                        poofEle.style.transform = "";
+                        var poofContainer = document.getElementById('poof-container');
+                        poofContainer.classList.toggle('hidden');
+                        var captureStatus = document.getElementById('capture-status');
+                        captureStatus.classList.toggle('hidden');
+                    }, 1000);
                 }
             });
         }
