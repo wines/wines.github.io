@@ -47,6 +47,7 @@ $(function () {
         alert("スマートフォンを横向きにしてください。");
         return false;
       }else{
+        $('html,body').animate({ scrollTop: 0 },0);
         backSound();
         $(this).remove();
         init();
@@ -86,7 +87,7 @@ $(function () {
     var enemyList = []; // 敵の配列
     var bulletList = []; // 発射弾の配列
     var count = 0; // フレーム番号
-    var scoreNum = 0; // スコア
+    var SCORE = 0; // スコア
     var STAGE_W = 667; // 画面サイズ
     var STAGE_H = 330;
     
@@ -151,10 +152,13 @@ $(function () {
       
       // 60フレームに1回、敵を生成
       if (count % 60 === 0) {
-        if(enemyCount % 100 === 0 && enemyCount > 0){
+        if(enemyCount >= 50){
+          /*ちんこ*/
+          enemy = new createjs.Bitmap(loader.getResult("chinko"));
+        }else if(enemyCount % 49 === 0 && enemyCount > 0){
           /*ボス*/
           enemy = new createjs.Bitmap(loader.getResult("boss"));
-        }else if(enemyCount % 53 === 0 && enemyCount > 0){
+        }else if(enemyCount % 29 === 0 && enemyCount > 0){
           /*ゆるあわ*/
           enemy = new createjs.Bitmap(loader.getResult("yuruawa"));
         }else if(enemyCount % 23 === 0 && enemyCount > 0){
@@ -213,11 +217,27 @@ $(function () {
       }
       // 敵の移動処理
       for (var i = 0; i < enemyList.length; i++) {
-        enemyList[i].x -= 2;
+        if(SCORE <= 1000){
+          enemyList[i].x -= 3;
+        }else if(SCORE <= 20000){
+          enemyList[i].x -= 4;
+        }else if(SCORE <= 30000){
+          enemyList[i].x -= 5;
+        }else if(SCORE <= 40000){
+          enemyList[i].x -= 6;
+        }else if(SCORE < 50000){
+          enemyList[i].x -= 7;
+        }else if(50000 <= SCORE && SCORE <= 60000){
+          enemyList[i].x -= 10;
+        }else{
+          enemyList[i].x -= 20;
+        }
+
         // 画面端まで移動したら
         if (enemyList[i].x < 0) {
           showGameOver(); // ゲームオーバー処理へ
         }
+        
       }
       // 発射弾と敵の当たり判定
       for (var j = 0; j < enemyList.length; j++) {
@@ -238,8 +258,8 @@ $(function () {
             //効果音
             atariSound();
             // スコアの更新
-            scoreNum += 1000;
-            score.text = String("躁鬱レベル："+scoreNum+" ポイント");
+            SCORE += 1000;
+            score.text = String("躁鬱レベル："+SCORE+" ポイント");
             break;
           }
         }
@@ -258,8 +278,13 @@ $(function () {
 
       /*tweet*/
       var $url = $("meta[property='og:url']").attr("content");
-      $("#wrap").append('<div id="game-over"><p class="end-game">GAME OVER</p><p class="level">躁鬱くんは<br><span>'+ scoreNum + ' </span>錠のおクスリを飲み、死にました。<br>躁鬱くんを殺したのは、他でもないあなたなのです…</p><p class="last-msg"><img src="/soutsu/shooting/img/gameover.png" alt=""><br>Happy end<span>❤</span></p></div><div id="tweet"><a href="http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text=%e3%80%8e%e3%81%89%e3%81%8f%e3%81%95%e3%83%b3%e2%80%a6%e3%81%83%e3%83%83%e3%81%b1%e3%81%83%e2%80%a6%e3%81%af%e3%81%8d%e3%81%be%e3%81%97%e3%81%9f%e3%81%ad%e2%80%a6%e3%80%8f%20%e3%82%b9%e3%82%b3%e3%82%a2%ef%bc%9a'+ scoreNum +'%e3%80%80%23%e8%ba%81%e9%ac%b1%e6%bc%ab%e7%94%bb%e9%9b%86%e3%80%80%23%e8%ba%81%e9%ac%b1%e3%81%97%e3%82%85%e3%80%9c%e3%81%a6%e3%81%83%e3%83%b3%e3%81%90"><i class="fa fa-twitter" aria-hidden="true"></i> ツイート</a></div><a href="/soutsu/shooting/shooting.html?sec" id="retry-btn"><i class="fa fa-refresh" aria-hidden="true"></i> リトライ</a>').css({"height":"auto"});
-      
+
+      if(SCORE >= 50000){
+        $("#wrap").append('<div id="game-over"><p class="end-game">GAME OVER</p><p class="level">躁鬱くんは<br><span>'+ SCORE + ' </span>錠のおクスリを飲み、<br>見事に精神を更なる次元へと昇華させたのです…</p><p class="last-msg"><span class="get-manga"><img src="/soutsu/shooting/img/manga.jpg" alt=""><br><span>マンガGET!!</span></span></p></div><div id="tweet"><a href="http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text=%e3%80%8e%e3%81%89%e3%81%8f%e3%81%95%e3%83%b3%e2%80%a6%e3%81%83%e3%83%83%e3%81%b1%e3%81%83%e2%80%a6%e3%81%af%e3%81%8d%e3%81%be%e3%81%97%e3%81%9f%e3%81%ad%e2%80%a6%e3%80%8f%20%e3%82%b9%e3%82%b3%e3%82%a2%ef%bc%9a'+ SCORE +'%e3%80%80%e6%bc%ab%e7%94%bb%e3%82%b2%e3%83%83%e3%83%88%ef%bc%81%e3%80%80%23%e8%ba%81%e9%ac%b1%e6%bc%ab%e7%94%bb%e9%9b%86%e3%80%80%23%e8%ba%81%e9%ac%b1%e3%81%97%e3%82%85%e3%80%9c%e3%81%a6%e3%81%83%e3%82%93%e3%81%90%20"><i class="fa fa-twitter" aria-hidden="true"></i> ツイート</a></div><a href="/soutsu/shooting/shooting.html?sec" id="retry-btn"><i class="fa fa-refresh" aria-hidden="true"></i> リトライ</a>').css({"height":"auto"});
+      }else{
+        $("#wrap").append('<div id="game-over"><p class="end-game">GAME OVER</p><p class="level">躁鬱くんは<br><span>'+ SCORE + ' </span>錠のおクスリを飲み、死にました。<br>躁鬱くんを殺したのは、他でもないあなたなのです…</p><p class="last-msg"><img src="/soutsu/shooting/img/gameover.png" alt=""><br>Happy end<span>❤</span></p></div><div id="tweet"><a href="http://twitter.com/intent/tweet?original_referer='+$url+'&amp;url='+$url+'&amp;text=%e3%80%8e%e3%81%89%e3%81%8f%e3%81%95%e3%83%b3%e2%80%a6%e3%81%83%e3%83%83%e3%81%b1%e3%81%83%e2%80%a6%e3%81%af%e3%81%8d%e3%81%be%e3%81%97%e3%81%9f%e3%81%ad%e2%80%a6%e3%80%8f%20%e3%82%b9%e3%82%b3%e3%82%a2%ef%bc%9a'+ SCORE +'%e3%80%80%e6%bc%ab%e7%94%bb%e3%82%b2%e3%83%83%e3%83%88%e3%81%aa%e3%82%89%e3%81%9a%ef%bc%81%e3%80%80%23%e8%ba%81%e9%ac%b1%e6%bc%ab%e7%94%bb%e9%9b%86%e3%80%80%23%e8%ba%81%e9%ac%b1%e3%81%97%e3%82%85%e3%80%9c%e3%81%a6%e3%81%83%e3%82%93%e3%81%90%20"><i class="fa fa-twitter" aria-hidden="true"></i> ツイート</a></div><a href="/soutsu/shooting/shooting.html?sec" id="retry-btn"><i class="fa fa-refresh" aria-hidden="true"></i> リトライ</a>').css({"height":"auto"});
+      }
+
       $('#game-over').addClass('bounce');
       $('#js-ad').addClass('wrap');
     }
