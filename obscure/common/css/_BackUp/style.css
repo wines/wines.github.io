@@ -427,8 +427,16 @@ textarea {
 	-webkit-appearance: none;
 }
 
-#main.sp {
-	background: url("/obscure/images/bg_move.gif") center center/100% auto no-repeat fixed #F8F8F8;
+#main.sp:before {
+	content: "";
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100vh;
+	background: url("/obscure/images/bg_move.gif") center center/100% auto no-repeat #F8F8F8;
 }
 
 body {
