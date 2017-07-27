@@ -68,12 +68,12 @@ p {
 }
 
 #home{
-	position: relative;
+  position: relative;
 }
 
 .banner {
-	position: absolute;
-	top: 25%;
+  position: absolute;
+  top: 25%;
 }
 
 .spacer {
@@ -164,12 +164,72 @@ p {
 
 .banner img.profile {
   border: 5px solid #333;
+  opacity: 0;
+}
+
+.banner img.profile.animated{
   -webkit-animation-duration: .75s;
   animation-duration: .75s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-name: bounceIn;
   animation-name: bounceIn;
+  opacity: 1;
+}
+
+.jello{
+  opacity: 0;
+}
+
+.jello.animated {
+  animation-name: jello;
+  transform-origin: center;
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+  opacity: 1;
+}
+
+@keyframes jello {
+  from, 11.1%, to {
+    transform: none;
+  }
+
+  22.2% {
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+
+  33.3% {
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+
+  44.4% {
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+
+  55.5% {
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+
+  66.6% {
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+
+  77.7% {
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+
+  88.8% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+}
+
+.jello {
+  animation-name: jello;
+  transform-origin: center;
 }
 
 @-webkit-keyframes bounceIn {
@@ -424,7 +484,7 @@ p {
   }
 
   .banner {
-  	top: 20px;
+    top: 20px;
   }
 
   h2.text-center {
@@ -661,7 +721,7 @@ figure.effect-bubba:hover p {
 
 .wrap-tweet{
   width: 640px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 }
 
 #tweet ul {
@@ -705,7 +765,7 @@ figure.effect-bubba:hover p {
   color: #fff;
   padding: 15px;
   position: relative;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   font-size: 24px;
 }
 .tweet:before {
@@ -723,6 +783,7 @@ figure.effect-bubba:hover p {
 
 
 .follow{
+  padding-top: 20px;
   width: 640px;
   margin: 0 auto 30px;
   text-align: right;
@@ -775,6 +836,9 @@ iframe{
     padding: 0 2%;
     text-align: center;
   }
+  .follow {
+    padding-top: 10px;
+  }
   h3{
     font-size: 7vw;
   }
@@ -787,5 +851,84 @@ iframe{
   }
   #tweet ul li {
     padding-left: 55px;
+  }
+}
+
+
+#load {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: #000;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  background: #ffffff;
+  -webkit-animation: loader 1s infinite ease-in-out;
+          animation: loader 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.loader {
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 250px;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+          animation-delay: -0.16s;
+  font-size: 11px;
+}
+
+.loader:after {
+  left: 1.5em;
+}
+
+@-webkit-keyframes loader {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 #ffffff;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #ffffff;
+    height: 5em;
+  }
+}
+
+@keyframes loader {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 #ffffff;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #ffffff;
+    height: 5em;
   }
 }
