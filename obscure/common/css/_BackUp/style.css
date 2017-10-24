@@ -114,6 +114,7 @@ a:hover {
 abbr[title] {
 	border-bottom: none; /* 1 */
 	text-decoration: underline; /* 2 */
+	-webkit-text-decoration: underline dotted;
 	text-decoration: underline dotted; /* 2 */
 }
 
@@ -532,6 +533,7 @@ h1 {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 31.48148%;
+	max-height: 300px;
 }
 
 #js-instalib li img {
@@ -548,7 +550,6 @@ h1 {
 	position: relative;
 	overflow: hidden;
 	-webkit-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 	border: 1px solid #333;
 	-webkit-box-sizing: border-box;
@@ -561,7 +562,6 @@ h1 {
 
 #js-instalib li a img {
 	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 	-webkit-transition: all .3s ease-in-out 0s;
 	transition: all .3s ease-in-out 0s;
@@ -734,7 +734,6 @@ h1 {
 
 #main-visual-bg {
 	-webkit-transform: rotate(235deg);
-	-ms-transform: rotate(235deg);
 	transform: rotate(235deg);
 	position: relative;
 	top: 18.7%;
@@ -772,7 +771,6 @@ h1 {
 
 .img1 {
 	background: url(/obscure/common/img/img_art_01.png) no-repeat;
-	-webkit-background-size: cover;
 	background-size: cover;
 	-webkit-animation: bgmove 4s linear 1;
 	animation: bgmove 4s linear 1;
@@ -781,7 +779,6 @@ h1 {
 
 .img2 {
 	background: url(/obscure/common/img/img_art_02.png) no-repeat;
-	-webkit-background-size: cover;
 	background-size: cover;
 	-webkit-animation: bgmove2 4s linear 1;
 	animation: bgmove2 4s linear 1;
@@ -792,7 +789,6 @@ h1 {
 
 .img3 {
 	background: url(/obscure/common/img/img_art_03.png) no-repeat;
-	-webkit-background-size: cover;
 	background-size: cover;
 	-webkit-animation: bgmove 4s linear 1;
 	animation: bgmove 4s linear 1;
@@ -803,7 +799,6 @@ h1 {
 
 .img4 {
 	background: url(/obscure/common/img/img_art_04.png) no-repeat;
-	-webkit-background-size: cover;
 	background-size: cover;
 	-webkit-animation: bgmove2 4s linear 1;
 	animation: bgmove2 4s linear 1;
@@ -814,7 +809,6 @@ h1 {
 
 .img5 {
 	background: url(/obscure/common/img/img_art_prof.jpg) no-repeat;
-	-webkit-background-size: cover;
 	background-size: cover;
 	-webkit-animation: fin 2s linear forwards;
 	animation: fin 2s linear forwards;
@@ -865,7 +859,6 @@ h1 {
 	position: absolute;
 	z-index: -1;
 	-webkit-transform: rotate(-30deg);
-	-ms-transform: rotate(-30deg);
 	transform: rotate(-30deg);
 	border-top: 1px solid #333;
 	border-right: 1px solid #333;
@@ -901,7 +894,6 @@ h1 {
 
 .box2:before {
 	-webkit-transform: rotate(210deg);
-	-ms-transform: rotate(210deg);
 	transform: rotate(210deg);
 	border-top: none;
 	border-right: 1px solid #333;
@@ -910,7 +902,6 @@ h1 {
 
 .box3:before {
 	-webkit-transform: rotate(-30deg);
-	-ms-transform: rotate(-30deg);
 	transform: rotate(-30deg);
 	min-height: 200px;
 }
@@ -1024,6 +1015,7 @@ footer p {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 10px;
+	max-height: 150px;
 }
 
 #js-instalib li:nth-child(3n) {
