@@ -39,7 +39,7 @@ if (pc) { location.href = 'https://twitter.com/_Obscr_/status/114679366984589312
 
 <div class="wrap">
 <div class="pos">
-<h1><img src="./images/logo.jpg" alt="OBSCR"></h1>
+<h1><img src="./images/logo.png" alt="OBSCR"></h1>
 <p>「　　　」</p>
 <p>2019.9.21(SAT) - 2019.9.23(MON)<br>
 13:00 - 20.00<br>
@@ -132,9 +132,9 @@ window.requestAnimationFrame(mainLoop);
 function mainLoop(){
   // Looping through all the colour data and changing each pixel to a random colour at a random coordinate, using the setPixel function defined earlier
   for(i = 0; i < canvasData.data.length / 4; i++){
-    var red = Math.floor(Math.random()*256);
-    var green = Math.floor(Math.random()*256);
-    var blue = Math.floor(Math.random()*256);
+    var red = Math.floor(Math.random()* 50);
+    var green = Math.floor(Math.random()* 50);
+    var blue = Math.floor(Math.random()* 50);
     var randX = Math.floor(Math.random()*canvas.width);
     var randY = Math.floor(Math.random()*canvas.height);
 
