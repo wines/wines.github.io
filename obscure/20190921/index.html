@@ -20,7 +20,9 @@
 <meta name="twitter:image" content="https://wines.github.io/obscure/20190921/images/og.jpg" />
 <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-<link href="./css/style.css" rel="stylesheet">
+<style>
+*{padding:0;margin:0}body{background:#000;font-family:Crimson Text,serif;text-align:center}img{max-width:100%}.pos{position:relative;top:4.3vh}h1{text-align:center;margin:0 auto 15px}h1 img{width:50%}p{position:relative;color:#fff;z-index:1;text-align:center;font-size:6vw;margin-top:0;margin-bottom:20px}span.notice{font-size:3.6vw}p.copy{margin-top:5pc;margin-bottom:10px;text-align:center;font-size:15px;left:0;right:0;z-index:4;overflow:hidden}p.copy a{color:#fff}a{color:red;text-decoration:underline}button{border:0;appearance:none;background:transparent;border-radius:none;padding:0;font-size:4vw;font-weight:inherit;user-select:none;font-family:Crimson Text,serif;cursor:pointer}.link{transition:all .5s;position:relative;z-index:2;margin:0;font-size:14px}.link button{color:#fff;transition:all .1s;color:red;text-decoration:underline}.link.link-1 button{cursor:none;text-decoration:none}.link.show{width:100vw;height:100vh;transform:translate(0,0);z-index:5;position:fixed;background-color:#000;top:0;left:0}.link.show button{opacity:0}.detail{position:fixed;width:100%;height:100%;left:0;top:0;box-sizing:border-box;overflow:auto;z-index:6;visibility:hidden;background:#000}.detail h2{font-size:5vw;color:#fff;top:50px;transition:all .5s;margin:30px 0}.detail .ui,.detail h2{transform:translate(0,30px);opacity:0}.detail .ui{margin-top:2rem;text-align:center;transition:all .3s}.detail p{transition:all .5s;transform:translate(0,30px);opacity:0}p.txt{width:90%;text-align:left;margin:0 auto;font-size:14px}.detail.show h2{transition-delay:.2s;color:#fff}.detail.show h2,.detail.show p{transition:all .5s;transform:translate(0,0);opacity:1}.detail.show p{transition-delay:.35s}.detail button.close{color:red}.detail.show{visibility:visible}.detail.show .ui{transition:all .5s;transition-delay:.5s;transform:translate(0,0);opacity:1;margin:20px 0}.map img{width:90%}canvas{position:fixed;top:0;left:0;z-index:1}.wrap{position:relative;z-index:3}
+</style>
 <script>
 var pc,sp,tablet = false;
 if((navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('Mobile') == -1) || navigator.userAgent.indexOf('iPad') > 0){
@@ -36,20 +38,26 @@ if (pc) { location.href = 'https://twitter.com/_Obscr_/status/114679366984589312
 
 <body>
 <canvas id="canvas"></canvas>
-
 <div class="wrap">
-<div class="pos">
-<h1><img src="./images/logo.png" alt="OBSCR"></h1>
-<p>「　　　」</p>
-<p>2019.9.21(SAT) - 2019.9.23(MON)<br>
-13:00 - 20.00<br>
-最終日19:00迄<br>
-"meee" Gallery Tokyo
-<span class="link link-2">( <button class="open" data-target="2">MAP</button> )</span> <br>
-<span style="font-size: 3.6vw;">※入場無料、販売物有り</span></p>
+  <div class="pos">
+    <h1><img src="./images/logo.png" alt="OBSCR"></h1>
+    <p>「<span class="link link-1"><button class="open" data-target="1">　　　</button></span>」</p>
+    <p>2019.9.21(SAT) - 2019.9.23(MON)<br>
+    13:00 - 20.00<br>
+    最終日19:00迄<br>
+    "meee" Gallery Tokyo
+    <span class="link link-2">( <button class="open" data-target="2">MAP</button> )</span><br>
+    <span class="notice">※入場無料、販売物有り</span></p>
+    <p><img src="./images/img_art_01.png" alt="OBSCR"></p>
+  </div>
 
-<p><img src="./images/img_art_01.png" alt=""></p>
-
+<div class="detail detail-1">
+  <h2>引換券</h2>
+  <p class="map"><img src="./images/og.jpg" alt=""></p>
+  <p class="txt">当日この画面をスタッフにお見せください。</p>
+  <div class="ui">
+    <button class="close">Close</button>
+  </div>
 </div>
 
 <div class="detail detail-2">
@@ -61,91 +69,8 @@ if (pc) { location.href = 'https://twitter.com/_Obscr_/status/114679366984589312
   </div>
 </div>
 
-<p class="copy"><a href="http://wines.github.io/obscure/">©OBSCR</a> / <a href="https://twitter.com/_obscr_?lang=ja"><i class="fab fa-twitter"></i></a>/ <a href="https://www.instagram.com/obscrism/?hl=ja"><i class="fab fa-instagram"></i></a> / <a href="https://obscr.base.ec/"><i class="fas fa-shopping-cart"></i></a></p>
+  <p class="copy"><a href="http://wines.github.io/obscure/">©OBSCR</a> / <a href="https://twitter.com/_obscr_?lang=ja"><i class="fab fa-twitter"></i></a>/ <a href="https://www.instagram.com/obscrism/?hl=ja"><i class="fab fa-instagram"></i></a> / <a href="https://obscr.base.ec/"><i class="fas fa-shopping-cart"></i></a></p>
 </div>
-
-<script>
-const linkButtons = document.querySelectorAll('button.open');
-for (const linkButton of linkButtons) {
-  linkButton.addEventListener('click', (event) => {
-    const element = event.currentTarget;
-    const target = element.dataset.target;
-    const link = document.querySelector(`.link-${target}`);
-    link.classList.add('show');
-    const detail = document.querySelector(`.detail-${target}`);
-    detail.classList.add('show');
-  });
-}
-
-const closeButtons = document.querySelectorAll('button.close');
-for (const button of closeButtons) {
-  button.addEventListener('click', () => {
-    const links = document.querySelectorAll('.link');
-    for (const link of links) {
-      link.classList.remove('show');
-    }
-    const details = document.querySelectorAll('.detail');
-    for (const detail of details) {
-      detail.classList.remove('show');
-    }
-  });
-}
-
-/*GA*/
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-60936625-1', 'auto');
-ga('send', 'pageview');
-
-// Setting up the canvas - size, setting a background, and getting the image data(all of the pixels) of the canvas.
-canvas = document.getElementById("canvas");
-ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-canvasData = ctx.createImageData(canvas.width, canvas.height);
-
-//Event listeners that set the canvas size to that of the window when the page loads, and each time the user resizes the window
-window.addEventListener("load", windowResize);
-window.addEventListener("resize", windowResize);
-
-function windowResize(){
-  canvas.style.width = window.innerWidth + 'px';
-  canvas.style.height = window.innerHeight + 'px';
-}
-
-//A function that manipulates the array of pixel colour data created above using createImageData()
-function setPixel(x, y, r, g, b, a){
-  var index = (x + y * canvasData.width) * 4;
-
-  canvasData.data[index] = r;
-  canvasData.data[index + 1] = g;
-  canvasData.data[index + 2] = b;
-  canvasData.data[index + 3] = a;
-}
-
-window.requestAnimationFrame(mainLoop);
-
-function mainLoop(){
-  // Looping through all the colour data and changing each pixel to a random colour at a random coordinate, using the setPixel function defined earlier
-  for(i = 0; i < canvasData.data.length / 4; i++){
-    var red = Math.floor(Math.random()* 60);
-    var green = Math.floor(Math.random()* 60);
-    var blue = Math.floor(Math.random()* 60);
-    var randX = Math.floor(Math.random()*canvas.width);
-    var randY = Math.floor(Math.random()*canvas.height);
-
-    setPixel(randX, randY, red, green, blue, 255);
-  }
-
-  //Place the image data we created and manipulated onto the canvas
-  ctx.putImageData(canvasData, 0, 0);
-
-  //And then do it all again...
-  window.requestAnimationFrame(mainLoop);
-}
-</script>
+<script src="./js/main.js"></script>
 </body>
 </html>
