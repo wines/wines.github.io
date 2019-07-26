@@ -100,7 +100,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-60936625-1', 'auto');
 ga('send', 'pageview');
 
-
 // Setting up the canvas - size, setting a background, and getting the image data(all of the pixels) of the canvas.
 canvas = document.getElementById("canvas");
 ctx = canvas.getContext("2d");
@@ -132,9 +131,9 @@ window.requestAnimationFrame(mainLoop);
 function mainLoop(){
   // Looping through all the colour data and changing each pixel to a random colour at a random coordinate, using the setPixel function defined earlier
   for(i = 0; i < canvasData.data.length / 4; i++){
-    var red = Math.floor(Math.random()* 50);
-    var green = Math.floor(Math.random()* 50);
-    var blue = Math.floor(Math.random()* 50);
+    var red = Math.floor(Math.random()* 80);
+    var green = Math.floor(Math.random()* 80);
+    var blue = Math.floor(Math.random()* 80);
     var randX = Math.floor(Math.random()*canvas.width);
     var randY = Math.floor(Math.random()*canvas.height);
 
