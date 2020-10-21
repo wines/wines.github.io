@@ -707,24 +707,6 @@ $(function () {
       //$(".box-event").css({"height":square});
     }mainVisual();
 
-
-    var token = '3596645554.1677ed0.1b1f5e4ba7854f10a972fc95d2a5e8cc';
-    var i = 1;
-    $.ajax({
-        url     : 'https://api.instagram.com/v1/users/self/media/recent/?access_token='+token+'&callback=?',
-        dataType: 'jsonp',
-        timeout: 30000
-    }).then(
-    function (insta) {
-        $.each(insta.data,function (photos,src) {
-          if ( photos === 30 ) { return false; } //上限設定
-          $('<li><a class="modal pic-'+i+'" href=""><img src="'+src.images.standard_resolution.url+'"></a></li>').appendTo('#js-instalib');
-          i++;    
-        });
-    },function(){
-        console.log("データ取得失敗");
-    });
-
      var timeLine = new TimelineMax();
      var $mdlayer = $("#js-modal-layer");
 
@@ -733,7 +715,7 @@ $(function () {
         $("#img-insta").addClass("block").css({"top":$(document).scrollTop() + 40});
         timeLine.to( $mdlayer , 0 , {opacity:'.7' , onComplete : function(){
             $mdlayer.addClass("block");
-        }});        
+        }});
         $("#img-insta").append('<img src='+path+' alt="">');
         return false;
     });
@@ -743,7 +725,7 @@ $(function () {
             $("#img-insta").find("img").remove();
             $("#img-insta").removeClass("block");
         }});
-        
+
         timeLine.to( $(this) , 0.3 , {opacity:'0' , onComplete : function(){
             $mdlayer.removeClass("block");
         }});
