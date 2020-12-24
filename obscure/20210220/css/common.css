@@ -329,3 +329,32 @@ summary, time, mark, audio, video, button {
   font-size: 100%;
   vertical-align: baseline;
 }
+
+.list-gallery {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.list-gallery li {
+  padding-left: 0;
+  width: 46%;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 750px) {
+  .list-gallery li {
+    margin-bottom: 4.8vw;
+  }
+}
+
+div.title,
+div.description {
+  font-family: Crimson Text, serif;
+}
+
+.list-bgm {
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
