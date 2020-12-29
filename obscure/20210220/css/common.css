@@ -339,7 +339,8 @@ summary, time, mark, audio, video, button {
 }
 .list-gallery li {
   padding-left: 0;
-  width: 46%;
+  margin-left: 0;
+  width: 47%;
   box-sizing: border-box;
   margin-bottom: 60px;
 }
